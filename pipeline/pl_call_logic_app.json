@@ -1,0 +1,35 @@
+{
+	"name": "pl_call_logic_app",
+	"properties": {
+		"activities": [
+			{
+				"name": "wa_call_logic_app",
+				"type": "WebActivity",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"url": "https://prod-11.southeastasia.logic.azure.com:443/workflows/91865e2bcfaa4e1eb630f8ed8343fb5b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=60BsoDs4De_PysNVDNWZsLSLix3xPNJV3MWQQJq9kfY",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"body": {
+						"blobName": "@pipeline().parameters.blobName"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"blobName": {
+				"type": "String",
+				"defaultValue": "persondata.txt"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

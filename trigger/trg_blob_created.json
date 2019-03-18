@@ -1,0 +1,23 @@
+{
+	"name": "trg_blob_created",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_copy_blob_to_sql",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/arbeeblob02/",
+			"blobPathEndsWith": ".csv",
+			"scope": "/subscriptions/22d24480-dbc4-42cf-baf5-3da635ae0d3a/resourceGroups/sampleresourcegroup02/providers/Microsoft.Storage/storageAccounts/arbeesamplestorage02",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"name": "kv_arbeekv",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://arbeekeyvault02.vault.azure.net/"
+		}
+	}
+}

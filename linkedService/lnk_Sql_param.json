@@ -1,0 +1,18 @@
+{
+	"name": "lnk_Sql_param",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"UserName": {
+				"type": "String"
+			},
+			"Password": {
+				"type": "String"
+			}
+		},
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=arbeesqlsrv02.database.windows.net;Initial Catalog=arbeesqldb02;User ID=@{linkedService().UserName};Password=@{linkedService().Password}"
+		}
+	}
+}

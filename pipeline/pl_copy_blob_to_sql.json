@@ -1,0 +1,98 @@
+{
+	"name": "pl_copy_blob_to_sql",
+	"properties": {
+		"activities": [
+			{
+				"name": "cda_blob_to_sql",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "truncate table dbo.mpanhh"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"value 1": "Column1",
+							"value 2": "Column2",
+							"value 3": "Column3",
+							"value 4": "Column4",
+							"value 5": "Column5",
+							"value 6": "Column6",
+							"value 7": "Column7",
+							"value 8": "Column8",
+							"value 9": "Column9",
+							"value 10": "Column10",
+							"value 11": "Column11",
+							"value 12": "Column12",
+							"value 13": "Column13",
+							"value 14": "Column14",
+							"value 15": "Column15",
+							"value 16": "Column16",
+							"value 17": "Column17",
+							"value 18": "Column18",
+							"value 19": "Column19",
+							"value 20": "Column20",
+							"value 21": "Column21",
+							"value 22": "Column22",
+							"value 23": "Column23",
+							"value 24": "Column24",
+							"value 25": "Column25",
+							"value 26": "Column26",
+							"value 27": "Column27",
+							"value 28": "Column28",
+							"value 29": "Column29",
+							"value 30": "Column30",
+							"value 31": "Column31",
+							"value 32": "Column32",
+							"value 33": "Column33",
+							"value 34": "Column34",
+							"value 35": "Column35",
+							"value 36": "Column36",
+							"value 37": "Column37",
+							"value 38": "Column38",
+							"value 39": "Column39",
+							"value 40": "Column40",
+							"value 41": "Column41",
+							"value 42": "Column42",
+							"value 43": "Column43",
+							"value 44": "Column44",
+							"value 45": "Column45",
+							"value 46": "Column46",
+							"value 47": "Column47",
+							"value 48": "Column48",
+							"value 49": "Column49",
+							"value 50": "Column50"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "dt_blob02",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "dt_Sql02",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

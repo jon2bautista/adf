@@ -1,0 +1,14 @@
+{
+	"name": "sqldb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_Sql02",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"typeProperties": {
+			"tableName": "[dbo].[Employee]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

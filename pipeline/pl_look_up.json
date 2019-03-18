@@ -1,0 +1,95 @@
+{
+	"name": "pl_look_up",
+	"properties": {
+		"activities": [
+			{
+				"name": "lkup_ds",
+				"type": "Lookup",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"dataset": {
+						"referenceName": "dt_Sql02",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "foreach",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "lkup_ds",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('lkup_ds').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"batchCount": 50,
+					"activities": [
+						{
+							"name": "sp_Insert_Employee",
+							"type": "SqlServerStoredProcedure",
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[InsertEmployee]",
+								"storedProcedureParameters": {
+									"FirstName": {
+										"value": {
+											"value": "@{item().FirstName}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"LastName": {
+										"value": {
+											"value": "@{item().LastName}",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"PersonId": {
+										"value": {
+											"value": "@{item().Id}",
+											"type": "Expression"
+										},
+										"type": "Int32"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "lnk_Sql02",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": [
+			"pl_look_up"
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

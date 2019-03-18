@@ -1,0 +1,216 @@
+{
+	"name": "dt_Sql02",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_Sql02",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "Column1",
+				"type": "String"
+			},
+			{
+				"name": "Column2",
+				"type": "String"
+			},
+			{
+				"name": "Column3",
+				"type": "String"
+			},
+			{
+				"name": "Column4",
+				"type": "String"
+			},
+			{
+				"name": "Column5",
+				"type": "String"
+			},
+			{
+				"name": "Column6",
+				"type": "String"
+			},
+			{
+				"name": "Column7",
+				"type": "String"
+			},
+			{
+				"name": "Column8",
+				"type": "String"
+			},
+			{
+				"name": "Column9",
+				"type": "String"
+			},
+			{
+				"name": "Column10",
+				"type": "String"
+			},
+			{
+				"name": "Column11",
+				"type": "String"
+			},
+			{
+				"name": "Column12",
+				"type": "String"
+			},
+			{
+				"name": "Column13",
+				"type": "String"
+			},
+			{
+				"name": "Column14",
+				"type": "String"
+			},
+			{
+				"name": "Column15",
+				"type": "String"
+			},
+			{
+				"name": "Column16",
+				"type": "String"
+			},
+			{
+				"name": "Column17",
+				"type": "String"
+			},
+			{
+				"name": "Column18",
+				"type": "String"
+			},
+			{
+				"name": "Column19",
+				"type": "String"
+			},
+			{
+				"name": "Column20",
+				"type": "String"
+			},
+			{
+				"name": "Column21",
+				"type": "String"
+			},
+			{
+				"name": "Column22",
+				"type": "String"
+			},
+			{
+				"name": "Column23",
+				"type": "String"
+			},
+			{
+				"name": "Column24",
+				"type": "String"
+			},
+			{
+				"name": "Column25",
+				"type": "String"
+			},
+			{
+				"name": "Column26",
+				"type": "String"
+			},
+			{
+				"name": "Column27",
+				"type": "String"
+			},
+			{
+				"name": "Column28",
+				"type": "String"
+			},
+			{
+				"name": "Column29",
+				"type": "String"
+			},
+			{
+				"name": "Column30",
+				"type": "String"
+			},
+			{
+				"name": "Column31",
+				"type": "String"
+			},
+			{
+				"name": "Column32",
+				"type": "String"
+			},
+			{
+				"name": "Column33",
+				"type": "String"
+			},
+			{
+				"name": "Column34",
+				"type": "String"
+			},
+			{
+				"name": "Column35",
+				"type": "String"
+			},
+			{
+				"name": "Column36",
+				"type": "String"
+			},
+			{
+				"name": "Column37",
+				"type": "String"
+			},
+			{
+				"name": "Column38",
+				"type": "String"
+			},
+			{
+				"name": "Column39",
+				"type": "String"
+			},
+			{
+				"name": "Column40",
+				"type": "String"
+			},
+			{
+				"name": "Column41",
+				"type": "String"
+			},
+			{
+				"name": "Column42",
+				"type": "String"
+			},
+			{
+				"name": "Column43",
+				"type": "String"
+			},
+			{
+				"name": "Column44",
+				"type": "String"
+			},
+			{
+				"name": "Column45",
+				"type": "String"
+			},
+			{
+				"name": "Column46",
+				"type": "String"
+			},
+			{
+				"name": "Column47",
+				"type": "String"
+			},
+			{
+				"name": "Column48",
+				"type": "String"
+			},
+			{
+				"name": "Column49",
+				"type": "String"
+			},
+			{
+				"name": "Column50",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[mpanhh]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
